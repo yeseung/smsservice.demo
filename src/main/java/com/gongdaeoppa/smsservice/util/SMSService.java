@@ -1,5 +1,6 @@
 package com.gongdaeoppa.smsservice.util;
 
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
@@ -11,7 +12,7 @@ import java.net.URL;
 
 public class SMSService {
 
-    private org.slf4j.Logger logger = LoggerFactory.getLogger(this.getClass());
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private final static String cafe24_hosting_id = "";
     private final static String cafe24_secure_key = "";
@@ -22,7 +23,6 @@ public class SMSService {
     private final static String userAgent = "Mozilla/5.0";
     private final static String charset = "UTF-8";
     private final static boolean isTest = false;
-
 
     public void sendSMSAsync(String msg, String phone) {
         try {
