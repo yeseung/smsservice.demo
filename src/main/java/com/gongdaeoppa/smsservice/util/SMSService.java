@@ -1,15 +1,17 @@
 package com.gongdaeoppa.smsservice.util;
 
+import org.slf4j.LoggerFactory;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.UUID;
-import java.util.logging.Logger;
 
 public class SMSService {
+
+    private org.slf4j.Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private final static String cafe24_hosting_id = "";
     private final static String cafe24_secure_key = "";
@@ -21,7 +23,6 @@ public class SMSService {
     private final static String charset = "UTF-8";
     private final static boolean isTest = false;
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(SMSService.class));
 
     public void sendSMSAsync(String msg, String phone) {
         try {
@@ -66,5 +67,7 @@ public class SMSService {
         } catch (IOException ex) {
             logger.info("SMS IOException : " + ex.getMessage());
         }
+
     }
+
 }
