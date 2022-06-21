@@ -5,7 +5,8 @@
 데모
 
 ```java
-public static void main(String[] args) {
+@Test
+void 카페24SMS() {
     new SMSService().sendSMSAsync("내용", "010xxxxxxxx");
 }
 ```
